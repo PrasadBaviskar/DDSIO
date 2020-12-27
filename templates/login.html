@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="col-lg-5 col-md-8 col-sm-10 col-xsm-12 mx-auto p-5 mt-5 jumbotron no-gutters rounded">
+        <h2 class="mt-0" align="center"> Login </h2> <hr>
+
+        <form method="POST">
+            {% for err in userform.errors %}
+                {{ err }}
+            {% endfor %}
+
+            {% for msg in messages %}
+
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  <strong style="color: red;"> {{ msg }} </strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+            {% endfor %}
+        {% csrf_token %}
+        {{ loginform|crispy}}
+            <button type="submit" class="btn btn-primary no-gutters col-12 mt-2 "> Login </button>
+            <p>  </p>
+            <a class="mt-5 mr-5" href="#"> Forgot Password </a>
+            <a class="mt-5 ml-5" href="{% url 'registration' %}"> Create An Account </a>
+        </form>
+    </div>
+{% endblock %}

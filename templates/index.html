@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="col-lg-6 col-md-8 col-sm-10 col-xsm-12 mx-auto p-6 mt-5 jumbotron no-gutters rounded">
+        <h2 class="mt-0" align="center"> Homepage </h2> <hr>
+    {% for m in messages %} {{ m }}{% endfor %}
+    </div>
+
+{% endblock %}

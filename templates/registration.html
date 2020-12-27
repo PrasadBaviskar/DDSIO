@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="col-lg-6 col-md-8 col-sm-10 col-xsm-12 mx-auto p-6 mt-5 jumbotron no-gutters rounded">
+        <h2 class="mt-0" align="center"> Registration </h2> <hr>
+
+        <form method="POST">
+            {% for err in userform.errors %}
+                {{ err }}
+            {% endfor %}
+        {% csrf_token %}
+        {{ userform|crispy}}
+        {{ userform1|crispy}}
+        <a class="btn btn-outline-primary mt-2" href="{% url 'userlogin' %}"> Already have an account? Sign in </a>
+        <button type="submit" class="btn btn-primary no-gutters col-4 mt-2 float-right"> Registration </button>
+    </form>
+    </div>
+
+{% endblock %}

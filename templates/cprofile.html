@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <table style="color: lavender">
+    <tr><th>Username:{{ uname }}</th></tr>
+    <tr><th>Position :{{ profiledata.position }}</th></tr>
+    <tr><th>Contact :{{ profiledata.contact }}</th></tr>
+    <tr><th>Gender  : {{ profiledata.gender }}</th></tr>
+    <tr><th>Birthday :{{ profiledata.birthdate }}</th></tr>
+    <tr><th>{{ profiledata.institute }}</th></tr>
+    <tr><th>Institute Of Enroll:{{ inst_data.inst_name }}
+    </th></tr>
+    </table>
+
+
+
+
+
+
+
+{% endblock %}
